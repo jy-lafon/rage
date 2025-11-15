@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reputation Age – Branding & Influence in a digital world</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #000;
+            --secondary-color: #fff;
+            --accent-color: #f5f5f5;
+            --text-color: #333;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--secondary-color);
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.95rem;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+        
+        section {
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .manifesto-content {
+            display: grid;
+            gap: 3rem;
+        }
+        
+        .manifesto-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .expertises-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .expertise-card {
+            padding: 2rem;
+            background: var(--accent-color);
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .expertise-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            background: var(--accent-color);
+        }
+        
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            align-items: center;
+        }
+        
+        .reference-logo {
+            text-align: center;
+            padding: 1rem;
+            background: var(--accent-color);
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        
+        .news-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .news-item {
+            padding: 2rem;
+            border-left: 4px solid var(--primary-color);
+            background: var(--accent-color);
+        }
+        
+        .news-date {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-info {
+            text-align: center;
+            padding: 3rem;
+            background: var(--accent-color);
+            border-radius: 10px;
+        }
+        
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+            display: block;
+        }
+        
+        footer {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <div class="logo" id="logo-text">REPUTATION AGE</div>
+            <ul class="nav-links">
+                <li><a href="#home">Sovereincy</a></li>
+                <li><a href="#manifesto">Manifesto</a></li>
+                <li><a href="#expertises">Expertises</a></li>
+                <li><a href="#rageia">RAGE x IA</a></li>
+                <li><a href="#realisations">Réalisations</a></li>
+                <li><a href="#equipe">Équipe</a></li>
+                <li><a href="#references">Références</a></li>
+                <li><a href="#actualites">Actualités</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <h1 id="hero-title">THIS IS THE AGE OF REPUTATION</h1>
+        <p id="hero-subtitle" style="font-size: 1.3rem; max-width: 900px; line-height: 1.8;">
+            La réputation est une pratique de l'espace public passionnante qui sera de plus en plus difficile. 
+            Pourquoi ? Parce que ceux qui n'aiment pas les normes, les injonctions, les pratiques mimétiques, 
+            se voient imposer des injonctions, des conformités aux normes, et un appel aux pratiques mimétiques. 
+            Garder le contrôle de sa parole, être singulier et libre devient notre enjeu. 
+            Là, une agence peut faire quelque chose, Sovereincy©
+        </p>
+    </section>
+
+    <!-- MANIFESTO SECTION -->
+    <section id="manifesto">
+        <div class="manifesto-content">
+            <div id="manifesto-paragraphs"></div>
+        </div>
+    </section>
+
+    <!-- EXPERTISES SECTION -->
+    <section id="expertises">
+        <h2 class="section-title">Nos Expertises</h2>
+        <div class="expertises-grid" id="expertises-grid"></div>
+    </section>
+
+    <!-- RAGE x IA SECTION -->
+    <section id="rageia">
+        <h2 class="section-title">RAGE x IA</h2>
+        <div id="ia-content"></div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section id="equipe">
+        <h2 class="section-title">Notre Équipe</h2>
+        <div class="team-grid" id="team-grid"></div>
+    </section>
+
+    <!-- REFERENCES SECTION -->
+    <section id="references">
+        <h2 class="section-title">Nos Références</h2>
+        <div class="references-grid" id="references-grid"></div>
+    </section>
+
+    <!-- NEWS SECTION -->
+    <section id="actualites">
+        <h2 class="section-title">Actualités</h2>
+        <div class="news-grid" id="news-grid"></div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-info" id="contact-info"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Reputation Age. Tous droits réservés.</p>
+        <div>
+            <a href="#mentions">Mentions légales</a>
+            <a href="#confidentialite">Politique de confidentialité</a>
+        </div>
+    </footer>
+
+    <script>
+        // ==========================================
+        // CONTENU MODIFIABLE - ÉDITEZ CES VARIABLES
+        // ==========================================
+        
+        const CONTENT = {
+            hero: {
+                title: "THIS IS THE AGE OF REPUTATION",
+                subtitle: `La réputation est une pratique de l'espace public passionnante qui sera de plus en plus difficile. 
+                Pourquoi ? Parce que ceux qui n'aiment pas les normes, les injonctions, les pratiques mimétiques, 
+                se voient imposer des injonctions, des conformités aux normes, et un appel aux pratiques mimétiques. 
+                Garder le contrôle de sa parole, être singulier et libre devient notre enjeu. 
+                Là, une agence peut faire quelque chose, Sovereincy©`
+            },
+            
+            manifesto: [
+                {
+                    text: `L'espace public était un impensé du marketing, un espace où peuvent se trouver convoquées de manière indifférenciée toutes les dimensions : entreprise-employé-client-utilisateur-produit-service, avec les mêmes termes impliquant, incriminant ou félicitant chacun. Les outils existants n'ayant pas été pensés pour ce nouvel espace complexe, il faut pouvoir gérer ce désordre avec méthode et aucune réponse ne va plus d'elle-même.`
+                },
+                {
+                    text: `Dernièrement une nouvelle dimension s'est invitée, l'injonction politique de se conformer au respect de l'environnement et aux nouveaux habits des relations sociales.`
+                },
+                {
+                    text: `Ceci a mené à des pratiques similaires, à des marques et des sociétés indifférenciées les unes des autres, convoquant les mêmes mots, images, codes, etc. Nous appelons cela une panique stratégique.`
+                },
+                {
+                    text: `Il n'existe pas de pratiques magiques pour la résoudre, si ce n'est la prise de conscience de ce qui se passe. Les intervenants se sont oubliés eux-mêmes, oublié ce qui les a rendus uniques, oublié leur culture, leur Purpose. Ils doivent revenir à ce qu'ils représentaient, ce qui les motivait, leurs croyances, leurs rêves, leur impact social, afin de ne pas mettre leurs pas dans les traces des autres, n'imiter personne.`
+                },
+                {
+                    text: `Ils construiront ainsi des Stratégies Souveraines, et laisseront une empreinte très forte. Quand les pratiques nées des conventions sont décodées et considérées comme manipulatrices, il est nécessaire de revenir à l'endroit d'où l'on n'aurait jamais dû dériver ; avec des pratiques et une méthodologie renouvelée, pour nourrir et rythmer un récit singulier. Construire et gérer votre réputation dans cet espace public, c'est le métier de Reputation Age.`
+                }
+            ],
+            
+            expertises: [
+                {
+                    title: "Branding",
+                    description: "Stratégie marketing, Plateforme de marque, Benchmark, Social Media Strategy, Identité de marque (site internet / studio graphique / vidéo / dataviz), Corporate digital"
+                },
+                {
+                    title: "Social media",
+                    description: "Identification, schémas d'acteurs et mapping, Programme influenceurs & Ambassadeurs, PR & e-PR, Events"
+                },
+                {
+                    title: "Territories",
+                    description: "Marque Pays, Identité des territoires, Digital diplomacy, Communication politique"
+                },
+                {
+                    title: "Influence",
+                    description: "Identification et sélection des relais, Relations KOL (Key Opinion Leaders) et Partenariats (ambassadeurs, médias, événements), Affaires publiques & Relations avec les décideurs, Média-Training, Publications."
+                },
+                {
+                    title: "Communication de crise",
+                    description: "Média-training, Gestion de crise, Gestion social média, Veilles et alertes"
+                },
+                {
+                    title: "AI Journal x Qant",
+                    description: "Avec Qant, notre partenaire-expert média assistée par IA, nous augmentons vos capacités de production et vous accompagnons dans le déploiement des supports (newsletter, fil WhatsApp ou Telegram…) capables d'étayer au quotidien votre vérité à destination de toutes vos cibles et parties prenantes."
+                },
+                {
+                    title: "AI Culture x La Villa Numeris",
+                    description: "En partenariat avec La Villa Numeris, nous anticipons les transformations technologiques et sociétales pour choisir notre destin. Nos sessions « Penser l'IAvenir » offrent des dialogues exclusifs, des explorations tech, et des initiations personnelles à l'IA."
+                }
+            ],
+            
+            iaSection: {
+                intro: `L'information est fragmentée, saturée et manipulable. Les médias uniformes de masse ont laissé place à des écosystèmes technologiques cloisonnés où chaque acteur – plateformes, États, entreprises, citoyen – développe sa propre vérité ou tente d'enrôler ses cibles dans son narratif.`,
+                elements: [
+                    {
+                        title: "L'émergence des « internets »",
+                        description: "La fragmentation des infrastructures technologiques crée des réseaux distincts, chacun avec ses propres algorithmes et réalités. Ces continents informationnels s'éloignent les uns des autres, avec leurs populations captives."
+                    },
+                    {
+                        title: "Un tsunami de contenus",
+                        description: "Les intelligences artificielles génèrent une quantité exponentielle de contenus synthétiques, accélérant cette fragmentation de l'information et l'incapacité des marques à conserver des réputations homogènes dans ces univers et ces mondes parallèles."
+                    },
+                    {
+                        title: "Une étrange défaite cognitive",
+                        description: "Fugaces, individuelles et intraçables, les données agrégées dans nos flux d'information seront toujours plus fluides et difficiles à interpréter. Seuls ceux qui disposeront d'un récit souverain et d'un capital de confiance imposeront leur narratif."
+                    }
+                ],
+                offers: [
+                    {
+                        title: "Acculturation",
+                        description: "En partenariat avec La Villa Numeris, nous anticipons les transformations technologiques et sociétales pour choisir notre destin. Nos sessions « Penser l'IAvenir » offrent des dialogues exclusifs, des explorations tech, et des initiations personnelles à l'IA."
+                    },
+                    {
+                        title: "Sovereincy",
+                        description: "Avec Reputation Age, nous préparons les marques au tsunami de contenus synthétiques. Ce programme inclut des travaux sur la Souveraineté Stratégique, l'unicité de marque, et la confiance."
+                    },
+                    {
+                        title: "AI Journal",
+                        description: "Avec Qant, notre partenaire-expert média assistée par IA, nous augmentons vos capacités de production et vous accompagnons dans le déploiement des supports (newsletter, fil WhatsApp ou Telegram…) capables d'étayer au quotidien votre vérité à destination de toutes vos cibles et parties prenantes."
+                    }
+                ]
+            },
+            
+            team: [
+                {
+                    name: "PHILIPPE LENTSCHENER",
+                    position: "Président directeur général",
+                    bio: "Philippe est un amoureux des stratégies et des marques. Persuadé que ces dernières ont toutes un destin à accomplir, modeste ou majestueux, il va chercher sans relâche de quelle survaleur elles sont porteuses."
+                },
+                {
+                    name: "PIERRE VALLET",
+                    position: "Cofondateur & Associé",
+                    bio: "Naitre au digital, c'est advenir à une culture. Le conseil stratégique, c'est une idée par jour pour ses clients – avec du digital dedans."
+                },
+                {
+                    name: "CHARLES-HENRI D'AUVIGNY",
+                    position: "Managing Partner",
+                    bio: "Intéressé par la chose publique, Charles-Henri a travaillé à l'Assemblée Nationale. En 2017, avec Philippe et Pierre, Charles-Henri crée Reputation Age, synthèse de ces enjeux."
+                },
+                {
+                    name: "FANNY ROUVERET",
+                    position: "Directrice de clientèle",
+                    bio: "Méditerranéenne ascendant de Nîmes ! Fanny rit et parle un peu plus fort que la moyenne. C'est notre experte en marketing territorial."
+                },
+                {
+                    name: "QUENTIN CAPELLE",
+                    position: "Directeur de clientèle",
+                    bio: "Titulaire d'un Master en Affaires Publiques de SciencesPo, Quentin a développé son expertise de l'approche multi-supports de la communication."
+                },
+                {
+                    name: "CLEMENT GUANTER",
+                    position: "Directeur Artistique",
+                    bio: "Clément est Directeur Artistique à l'agence, il donne forme aux idées. Il apporte son expérience et expertise sur les différents besoins web, prints ou encore vidéos."
+                },
+                {
+                    name: "HAMZA BENMIRA",
+                    position: "Data Analyst",
+                    bio: "Hamza est un amateur de chiffres et de lettres. Il a pour missions la surveillance et l'analyse des mouvements politico-économiques sur les médias et réseaux sociaux."
+                },
+                {
+                    name: "KARL GATEAU",
+                    position: "Consultant",
+                    bio: "Karl est tout-terrain. Chez Reputation Age, il fait s'entrechoquer les idées et les actes dans des champs tels que la finance, la santé, la data, le marketing territorial."
+                },
+                {
+                    name: "CHRISTELLE MAGNE",
+                    position: "Personal Assistant",
+                    bio: "Assistante personnelle pendant de nombreuses années, elle travaille en étroite collaboration avec la Direction pour assurer la coordination avec les équipes."
+                },
+                {
+                    name: "SARAH MOREAU",
+                    position: "Graphiste",
+                    bio: "Aussi curieuse que créative, Sarah cultive un goût de la découverte et de ce qui est nouveau. Passionnée d'architecture, Sarah a construit ses fondations à Lyon."
+                },
+                {
+                    name: "EMELINE PINEAU",
+                    position: "Consultante junior",
+                    bio: "Titulaire d'un Double Master en Affaires européennes à Sciences Po Paris et International Affairs à l'Université de St Gall. Emeline pense global, mais agit local."
+                }
+            ],
+            
+            references: [
+                "Habitat & Humanisme", "Vélib'", "INDIGO", "AGIPI", "UGAB",
+                "Conseil Régional de l'Île de la Réunion", "La Garanderie Avocats",
+                "Boursorama", "Marianne", "Medef", "Orphéopolis", "Matrice",
+                "Donnadieu & Associés", "Diot", "Cotentin", "Glasseo",
+                "Financière de la cité", "Ruban Rose", "Orne", "Amber",
+                "Ales", "Kering", "Normandie", "Licornes"
+            ],
+            
+            news: [
+                {
+                    date: "15 septembre 2025",
+                    title: "Investor Bro : Les performances passées ne présagent pas des narratifs futurs"
+                },
+                {
+                    date: "5 novembre 2025",
+                    title: "Tribune – Un appel pour une « autorisation de mise sur le marché des algorithmes »"
+                },
+                {
+                    date: "11 septembre 2025",
+                    title: "8ème édition des Trophées des Futures Licornes"
+                },
+                {
+                    date: "17 avril 2025",
+                    title: "Notre étude : L'IA vote aux AG du CAC 40"
+                },
+                {
+                    date: "17 avril 2025",
+                    title: "Rémunération des dirigeants du CAC 40 : ChatGPT vote contre"
+                }
+            ],
+            
+            contact: {
+                email: "contact@reputation-age.com",
+                phone: "+33 (0)9 72 64 02 14",
+                address: "61, rue la Boétie, 75008 Paris"
+            }
+        };
+
+        // ==========================================
+        // FONCTIONS DE RENDU - NE PAS MODIFIER
+        // ==========================================
+        
+        function renderManifesto() {
+            const container = document.getElementById('manifesto-paragraphs');
+            container.innerHTML = CONTENT.manifesto.map(para => 
+                `<p>${para.text}</p>`
+            ).join('');
+        }
+        
+        function renderExpertises() {
+            const container = document.getElementById('expertises-grid');
+            container.innerHTML = CONTENT.expertises.map(exp => `
+                <div class="expertise-card">
+                    <h3>${exp.title}</h3>
+                    <p>${exp.description}</p>
+                </div>
+            `).join('');
+        }
+        
+        function renderIAContent() {
+            const container = document.getElementById('ia-content');
+            container.innerHTML = `
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">${CONTENT.iaSection.intro}</p>
+                <div style="margin: 3rem 0;">
+                    <h3 style="margin-bottom: 2rem;">Trois éléments clés définissent ce nouveau paysage :</h3>
+                    ${CONTENT.iaSection.elements.map(elem => `
+                        <div style="margin-bottom: 2rem;">
+                            <h4 style="font-weight: 700; margin-bottom: 0.5rem;">${elem.title}</h4>
+                            <p style="line-height: 1.8;">${elem.description}</p>
+                        </div>
+                    `).join('')}
+                </div>
+                <div style="margin: 3rem 0;">
+                    <h3 style="margin-bottom: 2rem;">Notre offre conseil :</h3>
+                    ${CONTENT.iaSection.offers.map(offer => `
+                        <div style="margin-bottom: 2rem; padding: 1.5rem; background: var(--accent-color); border-radius: 10px;">
+                            <h4 style="font-weight: 700; margin-bottom: 0.5rem;">${offer.title}</h4>
+                            <p style="line-height: 1.8;">${offer.description}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+        
+        function renderTeam() {
+            const container = document.getElementById('team-grid');
+            container.innerHTML = CONTENT.team.map(member => `
+                <div class="team-member">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Crect fill='%23f5f5f5' width='150' height='150'/%3E%3C/svg%3E" alt="${member.name}">
+                    <h3>${member.name}</h3>
+                    <p style="font-weight: 600; margin-bottom: 0.5rem;">${member.position}</p>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">${member.bio}</p>
+                </div>
+            `).join('');
+        }
+        
+        function renderReferences() {
+            const container = document.getElementById('references-grid');
+            container.innerHTML = CONTENT.references.map(ref => `
+                <div class="reference-logo">${ref}</div>
+            `).join('');
+        }
+        
+        function renderNews() {
+            const container = document.getElementById('news-grid');
+            container.innerHTML = CONTENT.news.map(item => `
+                <div class="news-item">
+                    <div class="news-date">${item.date}</div>
+                    <h3>${item.title}</h3>
+                </div>
+            `).join('');
+        }
+        
+        function renderContact() {
+            const container = document.getElementById('contact-info');
+            container.innerHTML = `
+                <a href="mailto:${CONTENT.contact.email}">${CONTENT.contact.email}</a>
+                <a href="tel:${CONTENT.contact.phone.replace(/\s/g, '')}">${CONTENT.contact.phone}</a>
+                <p style="margin-top: 1rem; font-size: 1.1rem;">${CONTENT.contact.address}</p>
+            `;
+        }
+        
+        // Initialisation au chargement de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderManifesto();
+            renderExpertises();
+            renderIAContent();
+            renderTeam();
+            renderReferences();
+            renderNews();
+            renderContact();
+        });
+    </script>
+</body>
+</html>
